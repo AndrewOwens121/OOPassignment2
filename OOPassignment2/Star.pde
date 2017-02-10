@@ -25,7 +25,7 @@ class Star{
    float sx = map(x/z,0,1,0,400);
    float sy = map(y/z,0,1,0,400);
    float r  = map(z,0,400,8,0);
-   fill(255,0,0);
+   fill(100,0,100,150);
    ellipse(sx,sy,r,r);
  }
 }

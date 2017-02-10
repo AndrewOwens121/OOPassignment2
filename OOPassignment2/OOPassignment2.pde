@@ -9,14 +9,14 @@ void setup() {
    stars[i] = new Star();
  }
 }
-
+int screenpos=1;//controls position of ship , left lane =0 , middle =1 , right =2
 int screen=2;
 boolean[] toggled = new boolean[3];
 
 
 
 void draw() {
-  println(mouseX, mouseY);
+  println(mouseX,mouseY);
   if (screen == 1)
   {
     //space for splashscreen
@@ -31,7 +31,9 @@ void draw() {
       stars[i].show();
     }
     popMatrix();
-
+    
+    track();
+    Ship();
     ArcadeCase();//keep this method called last as it is an overlay
     title();
   }
@@ -43,6 +45,8 @@ void draw() {
   toggled[1]=false;
   toggled[2]=false;
 }
+
+
 void keyPressed() {
   if (keyCode == ' ') {
     toggled[0]=true;
@@ -51,11 +55,17 @@ void keyPressed() {
   }
   if (keyCode == LEFT) {
     toggled[1]=true;
+    if(screenpos>0){
+      screenpos--;
+    }
   } else {
     toggled[1]=false;
   }
   if (keyCode == RIGHT) {
     toggled[2]=true;
+    if(screenpos<2){
+      screenpos++;
+    }
   } else {
     toggled[2]=false;
   }
