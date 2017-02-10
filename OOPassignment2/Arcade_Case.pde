@@ -16,6 +16,9 @@ void ArcadeCase(){
  rect(300,100,400,275);
  
  //void moveClockwise(){
+   if(toggled[2]==true){
+     fill(255,0,0);}
+     else {noFill();}
   pushMatrix();
   translate(640, 465);
   beginShape();
@@ -27,7 +30,9 @@ void ArcadeCase(){
   popMatrix();
   
   //void moveCounterClockwise(){
-  
+  if(toggled[1]==true){
+     fill(255,0,0);}
+     else {noFill();}
   pushMatrix();
   translate(610, 465);
   beginShape();
@@ -39,6 +44,11 @@ void ArcadeCase(){
   popMatrix();
 
 //void fire(){
+  if(toggled[0]==true){
+     fill(255,0,0);}
+     else {noFill();}
   ellipse(320,480,40,30);
+  
+  
 
 }
