@@ -33,6 +33,7 @@ void draw() {
     popMatrix();
 
     ArcadeCase();//keep this method called last as it is an overlay
+    title();
   }
   if (screen == 3)
   {
