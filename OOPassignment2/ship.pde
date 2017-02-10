@@ -6,8 +6,16 @@ void Ship(){
   vertex(410, 360);
   endShape();
 
+  if(screenpos == 1){
+       beginShape();
+  vertex(500, 335);
+  vertex(470, 360);
+  vertex(530, 360);
+  endShape();
     
-  }
+  
+    
+  
   
 
   
