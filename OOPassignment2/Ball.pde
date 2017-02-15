@@ -9,8 +9,6 @@ class Ball {
     lane = 0;
     x = 500;
     y = 250;
-    
-    
   }
   void update() {
     if (y>335) {
@@ -19,6 +17,11 @@ class Ball {
       z=1;
       Health-=1;
       lane=int(random(0, 3));
+      if (speed>200) {
+        speed-=15;
+      } else {
+        speed-=3;
+      }
     } else {
       //travel down lane
       if (lane==0) {
