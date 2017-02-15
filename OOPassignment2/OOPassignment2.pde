@@ -20,7 +20,7 @@ int screen=2;
 boolean[] toggled = new boolean[3];
 
 void draw() {
-  println(Health);
+  println(balls[0].z);
   if (screen == 1)
   {
     //space for splashscreen
