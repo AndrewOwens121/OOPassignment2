@@ -39,10 +39,11 @@ void draw() {
     track();
     Ship();
     ArcadeCase();//keep this method called last as it is an overlay
-      balls[0].update(); 
-      balls[0].show();
-    
     title();
+     balls[0].update(); 
+     balls[0].show();
+    
+    
   }
   if (screen == 3)
   {
