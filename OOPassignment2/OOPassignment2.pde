@@ -14,13 +14,13 @@ void setup() {
   }
 }
 //GLOBAL VARIABLES
-int Health =5;
+
 int screenpos=1;//controls position of ship , left lane =0 , middle =1 , right =2
 int screen=2;
 boolean[] toggled = new boolean[3];
 
 void draw() {
-  println(balls[0].speed);
+  println(balls[0].Health);
   if (screen == 1)
   {
     //space for splashscreen
@@ -42,12 +42,17 @@ void draw() {
     title();
      balls[0].update(); 
      balls[0].show();
+     balls[0].collision();
     
     
   }
   if (screen == 3)
   {
+    
     //space for highscore
+    highscore();
+    ArcadeCase();
+    title();
   }
   toggled[0]=false;
   toggled[1]=false;
@@ -58,6 +63,13 @@ void draw() {
 void keyPressed() {
   if (keyCode == ' ') {
     toggled[0]=true;
+    if(screen==1 || screen == 3){
+      //resets game
+      balls[0].speed=400;
+      balls[0].Health=3;
+      balls[0].bullets=3;
+     screen =2; 
+    }
   } else {
     toggled[0]=false;
   }
