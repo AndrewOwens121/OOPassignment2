@@ -4,8 +4,8 @@ class Ball {
   float y;
   float z=1;//radius of ball - simulating distance
   int bullets=3;
-  int Health =3;
-  int speed=40;//value decreases to increase ball speed
+  int Health =10;
+  int speed=200;//value decreases to increase ball speed
   boolean[] COD = new boolean[2];//Cause of death , 0=health , 1 = bullets
   boolean alive=true;//variable to determine if user shot the target(ball) or not
 
@@ -16,11 +16,13 @@ class Ball {
   }
   void update() {
     if (Health>0 && bullets > 0) {
-      if (y>335 || alive==false) {
+      if (y>335 || alive==false) { //bug health-=1 even when ball is dead
         x=500;
         y=250;
         z=1;
+        if(y>335 && alive == true){
         Health-=1;
+        }
         alive = true;
         lane=int(random(0, 3));
         if (speed>200) {

@@ -20,7 +20,7 @@ int screen=2;
 boolean[] toggled = new boolean[3];
 
 void draw() {
-  println(balls[0].Health);
+  println(balls[0].bullets,balls[0].Health);
   if (screen == 1)
   {
     //space for splashscreen
@@ -67,7 +67,7 @@ void keyPressed() {
       //resets game
       balls[0].speed=400;
       balls[0].Health=3;
-      balls[0].bullets=3;
+      balls[0].bullets=4;
      screen =2; 
     }
   } else {
