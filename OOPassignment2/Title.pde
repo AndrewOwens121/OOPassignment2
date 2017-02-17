@@ -63,7 +63,7 @@ void title() {
   line(700, 50, 735, 75);
 
   //Health Bar
-  if (balls[0].Health>=1) {
+  if (balls[0].Health>=1 && screen==2) {
     pushMatrix();
     translate(300, 375);
     noStroke();
@@ -84,7 +84,7 @@ void title() {
       pushMatrix();
       translate(335, 375);
       noStroke();
-      fill(0, 255, 0,80);
+      fill(0, 255, 0, 80);
       beginShape();
       vertex(5, 5);
       vertex(13.3, 5);
@@ -102,7 +102,7 @@ void title() {
       pushMatrix();
       translate(370, 375);
       noStroke();
-      fill(0, 255, 0,80);
+      fill(0, 255, 0, 80);
       beginShape();
       vertex(5, 5);
       vertex(13.3, 5);
@@ -119,7 +119,7 @@ void title() {
   }
   //Bullets bar
   if (balls[0].bullets>=1 && screen==2) {
-    fill(127,80);
+    fill(127, 80);
     pushMatrix();
     translate(680, 375);
     beginShape();
@@ -141,7 +141,7 @@ void title() {
       rect(7.5, 15, 15, 15);
       popMatrix();
       if (balls[0].bullets>=3) {
-       // fill(127);
+        // fill(127);
         pushMatrix();
         translate(640, 375);
         beginShape();
@@ -153,5 +153,11 @@ void title() {
         popMatrix();
       }
     }
+  }
+  //Score
+  if (screen==2) {
+    textSize(14);
+    text("SCORE", 475, 400);
+    text(balls[0].score, 530, 400);
   }
 }

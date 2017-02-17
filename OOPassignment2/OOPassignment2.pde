@@ -16,15 +16,19 @@ void setup() {
 //GLOBAL VARIABLES
 
 int screenpos=1;//controls position of ship , left lane =0 , middle =1 , right =2
-int screen=2;
+int screen=1;
 boolean[] toggled = new boolean[3];
 
 void draw() {
-  println(balls[0].bullets, balls[0].Health);
+  //println(balls[0].bullets, balls[0].Health);
   println(mouseX,mouseY);
+  //println(balls[0].score);
   if (screen == 1)
   {
     //space for splashscreen
+    splashscreen();
+    ArcadeCase();//keep this method called last as it is an overlay
+    title();
   }
   if (screen == 2)
   {
@@ -65,9 +69,10 @@ void keyPressed() {
     if (screen==1 || screen == 3) {
       //resets game
       balls[0].speed=400;
-      balls[0].Health=3;
-      balls[0].bullets=4;
-      screen =2;
+      balls[0].Health = 3;
+      balls[0].bullets = 3;
+      screen = 2;
+      balls[0].score = 0;
     }
   } else {
     toggled[0]=false;
