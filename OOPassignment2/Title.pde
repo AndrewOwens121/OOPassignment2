@@ -61,4 +61,22 @@ void title() {
   line(700, 10, 825, 10);
   line(825, 10, 700, 50);
   line(700, 50, 735, 75);
+  
+  //Health Bar
+  pushMatrix();
+  translate(300,375);
+  noStroke();
+  fill(0,255,0);
+    beginShape();
+  vertex(5, 5);
+  vertex(13.3, 5);
+  vertex(21.66, 13.3);
+  vertex(29.9, 5);
+  vertex(38, 5);
+  vertex(38, 13.33);
+  vertex(21.66, 30);
+  vertex(5, 13.33);
+  vertex(5, 5);
+  endShape();
+  popMatrix();
 }

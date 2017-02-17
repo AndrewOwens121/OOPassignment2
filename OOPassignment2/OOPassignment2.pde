@@ -20,7 +20,7 @@ int screen=2;
 boolean[] toggled = new boolean[3];
 
 void draw() {
-  println(balls[0].bullets,balls[0].Health);
+  println(balls[0].bullets, balls[0].Health);
   if (screen == 1)
   {
     //space for splashscreen
@@ -40,15 +40,13 @@ void draw() {
     Ship();
     ArcadeCase();//keep this method called last as it is an overlay
     title();
-     balls[0].update(); 
-     balls[0].show();
-     balls[0].collision();
-    
-    
+    balls[0].update(); 
+    balls[0].show();
+    balls[0].collision();
   }
   if (screen == 3)
   {
-    
+
     //space for highscore
     highscore();
     ArcadeCase();
@@ -63,12 +61,12 @@ void draw() {
 void keyPressed() {
   if (keyCode == ' ') {
     toggled[0]=true;
-    if(screen==1 || screen == 3){
+    if (screen==1 || screen == 3) {
       //resets game
       balls[0].speed=400;
       balls[0].Health=3;
       balls[0].bullets=4;
-     screen =2; 
+      screen =2;
     }
   } else {
     toggled[0]=false;
