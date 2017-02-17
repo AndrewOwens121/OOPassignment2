@@ -67,7 +67,7 @@ void title() {
     pushMatrix();
     translate(300, 375);
     noStroke();
-    fill(0, 255, 0,80);
+    fill(0, 255, 0, 80);
     beginShape();
     vertex(5, 5);
     vertex(13.3, 5);
@@ -84,7 +84,7 @@ void title() {
       pushMatrix();
       translate(335, 375);
       noStroke();
-      fill(0, 255, 0);
+      fill(0, 255, 0,80);
       beginShape();
       vertex(5, 5);
       vertex(13.3, 5);
@@ -102,7 +102,7 @@ void title() {
       pushMatrix();
       translate(370, 375);
       noStroke();
-      fill(0, 255, 0);
+      fill(0, 255, 0,80);
       beginShape();
       vertex(5, 5);
       vertex(13.3, 5);
@@ -115,6 +115,43 @@ void title() {
       vertex(5, 5);
       endShape();
       popMatrix();
+    }
+  }
+  //Bullets bar
+  if (balls[0].bullets>=1 && screen==2) {
+    fill(127,80);
+    pushMatrix();
+    translate(680, 375);
+    beginShape();
+    vertex(15, 5);
+    vertex(22.5, 13);
+    vertex(7.5, 13);
+    endShape();
+    rect(7.5, 15, 15, 15);
+    popMatrix();
+    if (balls[0].bullets>=2) {
+      //fill(127);
+      pushMatrix();
+      translate(660, 375);
+      beginShape();
+      vertex(15, 5);
+      vertex(22.5, 13);
+      vertex(7.5, 13);
+      endShape();
+      rect(7.5, 15, 15, 15);
+      popMatrix();
+      if (balls[0].bullets>=3) {
+       // fill(127);
+        pushMatrix();
+        translate(640, 375);
+        beginShape();
+        vertex(15, 5);
+        vertex(22.5, 13);
+        vertex(7.5, 13);
+        endShape();
+        rect(7.5, 15, 15, 15);
+        popMatrix();
+      }
     }
   }
 }

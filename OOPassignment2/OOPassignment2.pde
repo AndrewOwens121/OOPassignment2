@@ -21,6 +21,7 @@ boolean[] toggled = new boolean[3];
 
 void draw() {
   println(balls[0].bullets, balls[0].Health);
+  println(mouseX,mouseY);
   if (screen == 1)
   {
     //space for splashscreen
